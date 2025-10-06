@@ -7,17 +7,45 @@
 
 Go to [this repository](https://github.com/AOSSIE-Org/Resonate) to know more about the project.
 
-## Environment Setup :
+## Environment Setup
 
-1. Pre-requisites :
+1. Pre-requisites
 
     (a) Fork the Repo
 
-    (b) Clone the Repo : `git clone https://github.com/AOSSIE-Org/Resonate-Backend`
+    (b) Clone the Repo: `git clone https://github.com/AOSSIE-Org/Resonate-Backend`
 
-2. Follow [this guide](https://docs.livekit.io/cloud/project-management/keys-and-tokens/) to obtain your `HOST`, `API-KEY`, `API-SECRET` from [livekit-cloud](https://livekit.io/cloud).
+2. Set up environment variables
 
-3. Create a new project on [Appwrite Cloud](https://appwrite.io/) or self host it locally by pulling their [docker image](https://appwrite.io/docs/self-hosting). Know more about Appwrite [here](https://appwrite.io/docs).
+```bash
+cp .env.example .env
+```
+
+Then fill in the values in `.env`:
+   - Leave the database/collection IDs as they are (they match the project structure)
+   - Add your Livekit credentials (see step 3)
+   - Add your email credentials (see step 5)
+
+3. Obtain Livekit credentials
+
+- Follow this guide to get your credentials.
+- Add `LIVEKIT_HOST`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` to your `.env` file.
+
+4. Set up Appwrite
+
+- Create a project on Appwrite Cloud or self-host.
+- Create an API key with necessary scopes.
+- Import the database structure: `appwrite deploy collection`.
+- Copy the generated database and collection IDs into your `.env` file.
+
+5. Email configuration (for OTP functionality)
+
+- Set `SENDER_MAIL` to your email address.
+- Set `SENDER_PASSWORD` to your app password (Gmail guide).
+
+6. Security note
+
+- Do not hardcode secrets in `appwrite.json`. Use environment variables. The template `.env.example` lists all variables required across functions.
 
 ## Functions :
 

@@ -3,6 +3,7 @@ import { throwIfMissing } from "./utils.js";
 
 export default async ({ req, res, log, error }) => {
     throwIfMissing(process.env, [
+        "APPWRITE_FUNCTION_PROJECT_ID",
         "LIVEKIT_API_KEY",
         "LIVEKIT_API_SECRET",
         "LIVEKIT_SOCKET_URL",

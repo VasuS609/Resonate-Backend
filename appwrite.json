@@ -85,7 +85,7 @@
             "vars": [
                 {
                     "key": "SENDER_MAIL",
-                    "value": "aossieorgforu@gmail.com"
+                    "value": "$SENDER_MAIL"
                 },
                 {
                     "key": "VERIFICATION_DATABASE_ID",
@@ -93,7 +93,7 @@
                 },
                 {
                     "key": "SENDER_PASSWORD",
-                    "value": "xizkyvzhduejxjel"
+                    "value": "$SENDER_PASSWORD"
                 },
                 {
                     "key": "OTP_COLLECTION_ID",

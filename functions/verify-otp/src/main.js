@@ -4,6 +4,7 @@ import { throwIfMissing } from './utils.js';
 export default async ({ req, res, log, error }) => {
     throwIfMissing(process.env, [
         'APPWRITE_API_KEY',
+        'APPWRITE_FUNCTION_PROJECT_ID',
         'VERIFICATION_DATABASE_ID',
         'OTP_COLLECTION_ID',
         'VERIFY_COLLECTION_ID',
