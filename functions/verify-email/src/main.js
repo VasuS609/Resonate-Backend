@@ -2,7 +2,7 @@ import { Client, Users } from 'node-appwrite';
 import { throwIfMissing } from './utils.js';
 
 export default async ({ req, res, log, error }) => {
-    throwIfMissing(process.env, ['APPWRITE_API_KEY', 'APPWRITE_FUNCTION_PROJECT_ID']);
+    throwIfMissing(process.env, ['APPWRITE_API_KEY']);
 
     const client = new Client()
         .setEndpoint(

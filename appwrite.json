@@ -85,7 +85,7 @@
             "vars": [
                 {
                     "key": "SENDER_MAIL",
-                    "value": "$SENDER_MAIL"
+                    "value": ""
                 },
                 {
                     "key": "VERIFICATION_DATABASE_ID",
@@ -93,7 +93,7 @@
                 },
                 {
                     "key": "SENDER_PASSWORD",
-                    "value": "$SENDER_PASSWORD"
+                    "value": ""
                 },
                 {
                     "key": "OTP_COLLECTION_ID",
