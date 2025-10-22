@@ -127,6 +127,19 @@ echo "Pushing Meilisearch credentials as env variables if you need any changes d
 appwrite project create-variable --key MEILISEARCH_ENDPOINT --value "$meilisearchEndpoint"
 appwrite project create-variable --key MEILISEARCH_ADMIN_API_KEY --value "$meilisearchMasterKey"
 
+## appwrite push functions --with-variables
+echo "Setting Up Email for OTP now ..."
+echo "This email will be used to send OTP verification codes to users."
+read -p "Please provide sender email address (e.g., your-email@gmail.com): " senderMail
+read -sp "Please provide sender email app password: " senderPassword
+echo ""
+
+# Push Email credentials as env variables for functions to use
+echo "Pushing Email credentials as env variables..."
+appwrite project create-variable --key SENDER_MAIL --value "$senderMail"
+appwrite project create-variable --key SENDER_PASSWORD --value "$senderPassword"
+echo "Email credentials configured successfully!"
+
 
 echo "Setting Up Livekit now ..."
 while true; do

@@ -180,6 +180,19 @@ while ($true) {
     }
 }
 
+# appwrite push functions --with-variables
+Write-Host "Setting Up Email for OTP now ..."
+Write-Host "This email will be used to send OTP verification codes to users."
+$senderMail = Read-Host "Please provide sender email address (e.g., your-email@gmail.com)"
+$senderPassword = Read-Host "Please provide sender email app password" -AsSecureString
+$senderPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($senderPassword))
+
+# Push Email credentials as env variables for functions to use
+Write-Host "Pushing Email credentials as env variables..."
+appwrite project create-variable --key SENDER_MAIL --value $senderMail
+appwrite project create-variable --key SENDER_PASSWORD --value $senderPasswordPlain
+Write-Host "Email credentials configured successfully!"
+
 # Push Livekit credentials as env variables for functions to use
 Write-Host "Pushing Livekit credentials as env variables if you need any changes do them in your Appwrite Resonate project's Global Env variables"
 appwrite project create-variable --key LIVEKIT_HOST --value $livekitHostURL
